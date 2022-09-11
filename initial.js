@@ -13,15 +13,17 @@ function generateRandomColor() {
 let u
 let i
 let ProxyArray=document.querySelectorAll('.agent')
-console.log(ProxyArray[0])
 let agentArray=[]
-  agentArray.push(ProxyArray[0])
+ProxyArray[0].style=`background-color:${generateRandomColor()}`
+agentArray.push(ProxyArray[0])
 let defaultAgent= agentArray[0]
-for(u=0;u<agentCount;u++){
-agentArray.push(defaultAgent)
-document.querySelector('#target').innerHTML+=agentArray[u].outerHTML
-agentArray[u].style=`background-color:${generateRandomColor()}`
+for(u=0;u<999  ;u++){
+  agentArray.push(defaultAgent);
+  document.querySelector('#target').innerHTML+=agentArray[u].outerHTML
+  agentArray[u].style=`background-color:${generateRandomColor()}`
 }
-console.log(agentArray.length)
-console.log(defaultAgent)
-
+console.log(agentArray[1].outerHTML)
+console.log(ProxyArray[0].outerHTML)
+// console.log(agentArray[0].outerHTML)
+// console.log(agentArray[7].outerHTML)
+// console.log(agentArray[10].outerHTML)
