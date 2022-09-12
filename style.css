@@ -7,7 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  width: 100px !important;
+  width: 500px !important;
   height: 100vh;
 }
 .agent {
@@ -20,5 +20,4 @@
   position: absolute;
   transform: translate(-50%, -50%);
   height: 50px;
-  
 }
