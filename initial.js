@@ -1,10 +1,8 @@
-// console.log(document.querySelectorAll('.agent')[3].classList.value)
 let agentCount = Math.floor(
   (document.documentElement.clientWidth *
     document.documentElement.clientHeight) /
     8
 );
-// http://127.0.0.1:5500/
 console.log(agentCount);
 function generateRandomColor() {
   let letters = "0123456789ABCDEF";
@@ -32,3 +30,13 @@ initiateBoid = (id) => {
   document.querySelector("#" + id).classList.toggle("active");
   console.log(document.querySelector("#" + id).classList);
 };
+addEventListener("pointermove", (e) => {
+  // console.log(e);
+  let xcor = e.pageX + "px";
+  let ycor = e.pageY + "px";
+  console.log(xcor, ycor);
+  document.querySelector(".active").style.left = e.pageX + "px";
+  document.querySelector(".active").style.top = e.pageY + "px";
+  // document.querySelectorAll(".agent").style.left = (e.pageX+() )+ "px";
+  // document.querySelectorAll(".agent").style.top = e.pageY + "px";
+});
