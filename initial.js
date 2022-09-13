@@ -27,20 +27,21 @@ for (u = 0; u < 999; u++) {
   agentArray[u].id = "agentNO" + (u + 1);
 }
 initiateBoid = (id) => {
-  console.log(agentArray.length)
-  if(!agentArray.find(o => o.classList.contains('active'))){
-    agentArray.pop(agentArray.find(o.id==id))
-    console.log(agentArray.length)
-    document.querySelector("#" + id).classList.toggle("active");
-  }else{
-    return id
-  }
+  // if(!agentArray.find(o => o.classList.contains('active'))){
+  // agentArray.pop(agentArray.find(o.id==id))
+  // console.log(agentArray.length)
+  document.querySelector("#" + id).classList.toggle("active");
+  // }else{
+  return id;
+  // }
 };
-addEventListener("pointermove", (e ,id) => {
+addEventListener("pointermove", (e, id) => {
   let xcor = e.pageX + "px";
   let ycor = e.pageY + "px";
   document.querySelector(".active").style.left = xcor;
-  document.querySelector(".active").style.top =ycor;
-id= initiateBoid()
-  console.log(id)
+  document.querySelector(".active").style.top = ycor;
+  id = initiateBoid();
 });
+// addEventListener('load',()=>{
+//   window.location.reload()
+// })
