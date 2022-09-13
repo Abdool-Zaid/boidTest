@@ -27,16 +27,20 @@ for (u = 0; u < 999; u++) {
   agentArray[u].id = "agentNO" + (u + 1);
 }
 initiateBoid = (id) => {
-  document.querySelector("#" + id).classList.toggle("active");
-  console.log(document.querySelector("#" + id).classList);
+  console.log(agentArray.length)
+  if(!agentArray.find(o => o.classList.contains('active'))){
+    agentArray.pop(agentArray.find(o.id==id))
+    console.log(agentArray.length)
+    document.querySelector("#" + id).classList.toggle("active");
+  }else{
+    return id
+  }
 };
-addEventListener("pointermove", (e) => {
-  // console.log(e);
+addEventListener("pointermove", (e ,id) => {
   let xcor = e.pageX + "px";
   let ycor = e.pageY + "px";
-  console.log(xcor, ycor);
-  document.querySelector(".active").style.left = e.pageX + "px";
-  document.querySelector(".active").style.top = e.pageY + "px";
-  // document.querySelectorAll(".agent").style.left = (e.pageX+() )+ "px";
-  // document.querySelectorAll(".agent").style.top = e.pageY + "px";
+  document.querySelector(".active").style.left = xcor;
+  document.querySelector(".active").style.top =ycor;
+id= initiateBoid()
+  console.log(id)
 });
