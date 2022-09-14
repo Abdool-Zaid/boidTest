@@ -1,8 +1,11 @@
+let u;
+let i;
 let agentCount = Math.floor(
   (document.documentElement.clientWidth *
     document.documentElement.clientHeight) /
     8
 );
+// document = mlem;
 console.log(agentCount);
 function generateRandomColor() {
   let letters = "0123456789ABCDEF";
@@ -12,8 +15,13 @@ function generateRandomColor() {
   }
   return color;
 }
-let u;
-let i;
+function generateRandomPosition() {
+  let position = { x: "", y: "" };
+  for (i = 0; i < 6; i++) {
+    position += letters[Math.floor(Math.random() * 16)];
+  }
+  return position;
+}
 let ProxyArray = document.querySelectorAll(".agent");
 let agentArray = [];
 ProxyArray[0].style = `background-color:${generateRandomColor()}`;
